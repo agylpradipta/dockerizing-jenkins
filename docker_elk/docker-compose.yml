@@ -13,7 +13,7 @@ services:
      - "9300:9300"
    environment:
      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
-     ELASTIC_PASSWORD: yourstrongpasswordhere
+     ELASTIC_PASSWORD: elasticpradipta
      discovery.type: single-node
    networks:
      - elk_stack
@@ -30,6 +30,16 @@ services:
      - elk_stack
    depends_on:
      - elasticsearch
+
+ filebeat:
+   image: starlord345/filebeatimage:latest
+   networks:
+     - elk_stack
+   volumes:
+     - /var/lib/docker/containers:/usr/share/dockerlogs/data:ro
+     - /var/run/docker.sock:/var/run/docker.sock
+  # depends_on:
+  #   - elasticsearch
  
  kibana:
    build:
