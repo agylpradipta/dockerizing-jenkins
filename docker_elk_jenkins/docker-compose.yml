@@ -58,20 +58,22 @@ services:
    depends_on:
      - elasticsearch
      
-  jenkins:
-    build:
-      context: jenkins/
-    privileged: true
-    user: root
-    ports:
-      - 8083:8080
-      - 50003:50000
-    container_name: jenkins
-    volumes:
-      - ./jenkins_data:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock
-    networks:
-      - elk_stack    
+ jenkins:
+   build:
+     context: jenkins/
+   privileged: true
+   user: root
+   environment:
+     JENKINS_OPTS: --argumentsRealm.roles.user=pradipta --argumentsRealm.passwd.admin=pradipta --argumentsRealm.roles.admin=admin
+   ports:
+     - 8083:8080
+     - 50003:50000
+   container_name: jenkins
+   volumes:
+     - ./jenkins_data:/var/jenkins_home
+     - /var/run/docker.sock:/var/run/docker.sock
+   networks:
+     - elk_stack    
  
 networks:
  elk_stack:
