@@ -3,3 +3,9 @@
 2. Before starting the ELK + Jenkins container, check `filebeat_docker/filebeat.yml` because I still manualy pre-defined the Logstash host. Just give the private / public IP where the Logstash container ran.
 3. Start the whole environment setup by running `./runall.sh`
 
+
+Kibana
+User: elastic
+Password: elasticpradipta
+
+##
