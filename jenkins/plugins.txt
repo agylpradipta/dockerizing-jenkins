@@ -1,0 +1,7 @@
+kubernetes
+saferestart
+credentials
+docker
+git-client
+git-server
+git
