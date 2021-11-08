@@ -4,8 +4,10 @@
 3. Start the whole environment setup by running `./runall.sh`
 
 
-Kibana
-User: elastic
-Password: elasticpradipta
+### Kibana
+- User: elastic
+- Password: elasticpradipta
 
-##
+### Jenkins
+- User: pradipta
+- Password: pradipta
