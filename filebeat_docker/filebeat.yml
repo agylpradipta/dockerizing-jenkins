@@ -1,3 +1,10 @@
+#------------------------------- Logstash Module -------------------------------
+#- module: logstash
+  # logs
+#  log:
+#    enabled: true
+
+
 filebeat.inputs:
   - type: docker
     containers:
@@ -19,7 +26,7 @@ filebeat.config.modules:
  
 output:
   logstash:
-  hosts: ["172.31.10.134:5044"]
+      hosts: ["172.31.10.134:5044"]
  
 log files:
 logging.level: error

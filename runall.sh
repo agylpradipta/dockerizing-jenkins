@@ -2,7 +2,7 @@
 
 #Build filebeatimage
 cd filebeat_docker
-docker build -t starlord345/filebeatimage:latest . 
+docker build -t filebeatimage . 
 
 #clean anything with same name to get rid of clashes
 cd ../docker_elk

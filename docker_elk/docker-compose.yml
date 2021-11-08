@@ -24,6 +24,7 @@ services:
    build:
      context: logstash/
    ports:
+     - "5044:5044"
      - "5000:5000"
      - "9600:9600"
    environment:
@@ -35,9 +36,11 @@ services:
 
  filebeat:
    container_name: filebeat
-   image: starlord345/filebeatimage:latest
-   #networks:
-   # - elk_stack
+   image: filebeatimage
+   networks:
+    - elk_stack
+# guide
+# docker run -d --name filebeat -v /var/lib/docker/containers:/usr/share/dockerlogs/data -v /var/run/docker.sock:/var/run/docker.sock filebeatimage
    volumes:
      - /var/lib/docker/containers:/usr/share/dockerlogs/data:ro
      - /var/run/docker.sock:/var/run/docker.sock
