@@ -5,7 +5,7 @@ cd filebeat_docker
 docker build -t filebeatimage . 
 
 #clean anything with same name to get rid of clashes
-cd ../docker_elk
+cd ../docker_elk_jenkins
 docker-compose  down
 #cd ../
 #docker-compose -f docker-compose-jenkins.yaml down
